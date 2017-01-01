@@ -11,5 +11,6 @@ return [
     'client-id' => 'Slack Client ID',
     'client-secret' => 'Slack Client Secret',
     'enable-slack-sso' => 'Enable Slack SSO',
-    'update' => 'Update'
+    'update' => 'Update',
+    'change-applied' => 'Change has been applied successfully !'
 ];

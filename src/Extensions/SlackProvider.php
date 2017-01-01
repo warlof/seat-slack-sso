@@ -28,6 +28,7 @@ class SlackProvider extends AbstractProvider implements ProviderInterface
 
         $this->clientId = setting('warlof.slack.sso.credentials.client_id', true);
         $this->clientSecret = setting('warlof.slack.sso.credentials.client_secret', true);
+        $this->redirectUrl = url()->to('/slacksso/auth/callback');
     }
 
     /**

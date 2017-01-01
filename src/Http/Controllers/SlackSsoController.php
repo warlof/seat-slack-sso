@@ -114,7 +114,7 @@ class SlackSsoController extends Controller
         setting(['warlof.slack.sso.allowed', $request->input('slack-sso-enabled')], true);
 
         return redirect()->back()
-            ->with('success', '');
+            ->with('success', trans('change-applied'));
     }
 
     private function findOrCreateUser(SocialiteUser $user) : User
