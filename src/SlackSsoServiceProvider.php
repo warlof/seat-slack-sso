@@ -27,9 +27,6 @@ class SlackSsoServiceProvider extends ServiceProvider
             __DIR__ . '/Config/slacksso.config.php', 'slacksso.config');
 
         $this->mergeConfigFrom(
-            __DIR__ . '/Config/slacksso.permissions.php', 'web.permissions');
-
-        $this->mergeConfigFrom(
             __DIR__ . '/Config/package.sidebar.php', 'package.sidebar');
     }
 

@@ -20,8 +20,6 @@ class ConfirmationValidation extends FormRequest
     public function rules()
     {
         return [
-            'email' => 'required|email',
-            'name' => 'required|string',
             'password' => 'required|string'
         ];
     }

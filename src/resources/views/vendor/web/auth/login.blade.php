@@ -55,7 +55,7 @@
 
             @if ((setting('allow_sso', true) === 'yes') && (setting('warlof.slack.sso.allowed', true) == '1'))
                 <button type="button" class="btn btn-primary btn-lg center-block" data-toggle="modal" data-target="#sso-authentication">
-                    <i class="fa fa-key"></i> Sign in with an external account
+                    <i class="fa fa-key"></i> {{ trans('slacksso::seat.external-account') }}
                 </button>
 
                 <div class="modal fade" id="sso-authentication" tabindex="-1" role="dialog">
@@ -65,7 +65,7 @@
                                 <button type="button" class="close" data-dismiss="modal" aria-label="close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
-                                <h4 class="modal-title">Choose an authority</h4>
+                                <h4 class="modal-title">{{ trans('slacksso::seat.choose-authority') }}</h4>
                             </div>
                             <div class="modal-body">
                                 <div class="row">
@@ -88,7 +88,7 @@
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-md btn-default" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-md btn-default" data-dismiss="modal">{{ trans('web::seat.close') }}</button>
                             </div>
                         </div>
                     </div>

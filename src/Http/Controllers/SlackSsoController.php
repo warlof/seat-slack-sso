@@ -58,11 +58,19 @@ class SlackSsoController extends Controller
 
     public function getSsoConfirmation()
     {
+        if (auth()->check()) {
+            return redirect()->home();
+        }
+
         return view('slacksso::auth.confirmation');
     }
 
     public function postSsoConfirmation(ConfirmationValidation $request)
     {
+        if (auth()->check()) {
+            return redirect()->home();
+        }
+
         $user = User::where('name', session()->get('warlof.slack.sso')->name)
             ->orWhere('email', session()->get('warlof.slack.sso')->email)
             ->first();

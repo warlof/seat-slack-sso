@@ -31,14 +31,18 @@ Route::group([
         'uses' => 'SlackSsoController@postSsoConfirmation'
     ]);
 
-    Route::get('/configuration', [
-        'as' => 'warlof.slack.sso.configuration',
-        'uses' => 'SlackSsoController@getConfiguration'
-    ]);
+    Route::group([
+        'middleware' => 'bouncer:superuser'
+    ], function() {
+        Route::get('/configuration', [
+            'as' => 'warlof.slack.sso.configuration',
+            'uses' => 'SlackSsoController@getConfiguration'
+        ]);
 
-    Route::post('/configuration', [
-        'as' => 'warlof.slack.sso.configuration.post',
-        'uses' => 'SlackSsoController@postConfiguration'
-    ]);
+        Route::post('/configuration', [
+            'as' => 'warlof.slack.sso.configuration.post',
+            'uses' => 'SlackSsoController@postConfiguration'
+        ]);
+    });
 
 });

@@ -61,15 +61,11 @@ class SlackProvider extends AbstractProvider implements ProviderInterface
      */
     protected function getUserByToken($token)
     {
-        logger()->debug('Token : ' . $token);
-
         $response = $this->getHttpClient()
             ->get('https://slack.com/api/users.identity?token=' . $token);
 
         $data = json_decode($response->getBody()->getContents(), true);
         $data['access_token'] = $token;
-
-        logger()->debug('user by token', $data);
 
         return $data;
     }
@@ -82,8 +78,6 @@ class SlackProvider extends AbstractProvider implements ProviderInterface
      */
     protected function mapUserToObject(array $user)
     {
-        logger()->debug('map', $user);
-
         return (new User())->setRaw($user)->map([
             'name' => $user['user']['name'],
             'email' => $user['user']['email'],
