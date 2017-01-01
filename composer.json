@@ -1,0 +1,22 @@
+{
+    "name": "warlof/seat-slack-sso",
+    "description": "This plugin provide an SSO integration with Slack for SeAT",
+    "type": "seat-plugin",
+    "autoload": {
+        "psr-4": {
+            "Warlof\\Seat\\Slack\\Sso\\": "src/"
+        }
+    },
+    "require": {
+        "eveseat/web": "^2.0",
+        "laravel/socialite": "^2.0"
+    },
+    "license": "GPL-3.0",
+    "authors": [
+        {
+            "name": "Warlof Tutsimo",
+            "email": "loic.leuilliot@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable"
+}
